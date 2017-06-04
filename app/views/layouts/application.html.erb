@@ -4,11 +4,20 @@
     <title>APP</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
+  <nav>
+  	<ul>
+  		<li>Home</li>
+  		<li>About</li>
+  		<li>Contact</li>
+  		</ul>
+  </nav>
     <%= yield %>
+    <footer>
+    	&copy; 2017 Chris Hatens
+    </footer>
   </body>
 </html>
