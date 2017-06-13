@@ -1,27 +1,24 @@
-body {
-	color: #000;
+h1 {
+	color :rgb(132, 166, 193);
 }
-
-a:hover {
-	background-color: transparent;
+.footercopy {
+	color: White;
+    text-align: center;
 }
-
-p {
-	margin: 30px 0;
+.hometitle {
+	color: #84a6c1;
+    position: relative;
+    top: 34px;
+    text-align: center;
 }
-
-
-/*Navigation*/
-
-.navbar {
-	border-radius: 0;
-	background-color: #000;
-	min-height: 46px;
-	border: 0;
+.homesubtitle {
+	position: relative;
+    top: 20px;
+    text-align: center;
+    font-size: 1em;
+    font-style: italic;
 }
-
-.brand {
-	height: 45px;
-	width: auto;
-	margin: 20px 0 20px;
+.navmove {
+    position: relative;
+    left: 375px;
 }
