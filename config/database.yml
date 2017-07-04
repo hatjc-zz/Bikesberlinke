@@ -22,8 +22,6 @@ test:
 
 production:
   adapter: postgresql
-  encoding: unicode
-  pool: 5
   database: final_production
-  username: final
-  password: <%= ENV['FINAL_PASSWORD'] %>
+  pool: 5
+  timeout: 5000
