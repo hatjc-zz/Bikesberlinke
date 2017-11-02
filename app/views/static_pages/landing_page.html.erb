@@ -1,2 +1,5 @@
 <h2>Featured Product:</h2>
-<%= @featured_product.name %>
+<h3><%= @featured_product.name %></h3>
+<%= image_tag(@featured_product.image_url, class: "img-responsive") %>
+      <p> Color: <%= @featured_product.color %></p>
+      <p>KES:<strong><%= @featured_product.price %></strong></p>
