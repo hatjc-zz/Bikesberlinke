@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+.footercopy {
+	position: relative;
+    text-align: center;
+	color: white
+}
+.footerbar {
+	background: #337ab7;
+    padding: 30px 0;
+    color: #fff;
+    width: 100%
+}

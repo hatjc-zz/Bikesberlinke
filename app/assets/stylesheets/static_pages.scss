@@ -1,0 +1,402 @@
+/*General*/
+
+body {
+	color: #000;
+}
+
+a:hover {
+	background-color: transparent;
+}
+
+p {
+	margin: 30px 0;
+}
+
+
+/*Navigation*/
+
+.header {
+	position: relative;
+}
+
+.navbar {
+	border-radius: 0;
+	background-color: #2b2b6b;
+	border: 0;
+	min-height: 46px;
+}
+
+.nav a {
+	min-height: 46px;
+}
+
+.navbar-right > li {
+	float: right;
+}
+
+.brand {
+	display: block;
+	height: 45px;
+	width: auto;
+	margin: 20px 0;
+}
+
+.brand img {
+	height: 45px;
+	width: auto;
+}
+
+.search_bar {
+	position: relative;
+	height: 30px;
+}
+
+.search_bar > form > label {
+	display: none;
+}
+
+.search_bar > form > input {
+	position: absolute;
+	height: 30px;
+}
+
+.alert {
+	border: none;
+	border-radius: 0;
+}
+
+/*.pull-right {
+	display: inline;
+	margin: 0;
+}*/
+
+.navbar-toggle {
+	float: left;
+	margin: 15px;
+}
+
+.login {
+	margin-right: 30px;
+}
+
+/*Carousel*/
+
+.carousel-inner {
+	background-color: #000;
+}
+
+.carousel-caption {
+	font-family: 'ITC Avant Garde Gothic W05 Bol', helvetica, arial, sans-serif;
+	font-size: 70px;
+	line-height: 85%;
+	letter-spacing: -0.03em;
+	font-kerning: normal !important;
+	text-rendering: optimizeLegibility;
+	text-align: left;
+	text-transform: uppercase;
+	right: 5%;
+	left: 55%;
+	top: 5%;
+	text-shadow: none;
+	display: inline;
+}
+
+.carousel-control {
+	background-image: none !important;
+	text-shadow: none;
+	color: #fff !important;
+	opacity: 100;
+	width: 7%;
+}
+
+.carousel-control:hover, .carousel-control:focus {
+	background-color: rgba(0,0,0,0);
+	color: #fff;
+	opacity: 100;
+}
+
+.carousel-inner > .item > a > img {
+	width: 50%;
+}
+
+.carousel-indicators {
+	bottom: -60px;
+}
+
+.carousel-indicators > li {
+	border: 0;
+	border-radius: 0;
+	background-color: #999;
+	width: 12px;
+	height: 12px;
+	margin: 0;
+}
+
+.carousel-indicators > .active {
+	background-color: #000;
+}
+
+
+
+
+/*Product Grid*/
+
+.page_wrap {
+	padding: 0;
+}
+
+.col-md-3 {
+	padding-bottom: 30px;
+}
+
+.product_grid_box {
+	background-color: #ccc;
+	padding: 20px;
+	color: #000000 !important;
+	font-size: 16px;
+	line-height: 28px;
+	min-height: 174px;
+	position: relative;
+}
+
+.product_grid_box h2 {
+	margin: 0;
+	line-height: 18px;
+}
+
+.product_grid_box .price {
+	display: block;
+	font-weight: bold;
+	position: absolute;
+	bottom: 20px;
+}
+
+.product_grid_box a {
+	display: block;
+}
+
+/*Product Page*/
+
+.product_colour {
+	font-size: 22px;
+}
+
+.colour_box {
+	height: 20px;
+	width: 20px;
+	border: 1px solid #000;
+	display: inline-block;
+	margin-right: 8px;
+	position: relative;
+	top: 2px;
+}
+
+.product_desc > p {
+		margin-top: 0;
+	}
+
+/*UI Kit*/
+
+input {
+	-webkit-appearance: none;
+	border-width: 0;
+	padding: 8px;
+}
+
+.field > input {
+  width: 300px;
+}
+
+input[type=button],
+input[type=reset],
+input[type=submit] {
+	background-color: #777	;
+	color: #fff;
+	border: none;
+}
+
+input[type=button],
+input[type=reset],
+input[type=submit]:hover {
+	background-color: #ccc;
+	color: #fff;
+	border: none;
+}
+
+input[type=checkbox] {
+	width: auto;
+	margin-right: 5px;
+	border-radius: 0px;
+	background-color: red;	
+}
+
+.actions > input {
+	font-family: 'ITC Avant Garde Gothic W05 Bol', helvetica, arial, sans-serif;
+	font-size: 15px;
+	text-transform: uppercase;
+	padding: 6px 10px;
+}
+
+.remember_me {
+	display: inline;
+}
+
+.devise_links {
+	margin-right: 10px;
+}
+
+.nav > li > a,
+.navbar-inverse .navbar-nav > li > a {
+	padding: 13px 15px;
+}
+
+input[type=submit] {
+	padding: 6px 10px;
+}
+
+.search_submit {
+	right: 20px;
+}
+
+.search_field {
+	right: 100px;
+}
+
+/*Footer*/
+
+footer {
+	margin-top: 25px;
+}
+
+
+
+/*Typography*/
+
+body {
+	font-family: helvetica, arial, sans-serif;
+}
+
+h1 {
+	font-family: 'ITC Avant Garde Gothic W05 Bol', helvetica, arial, sans-serif;
+	font-size: 28px;
+	line-height: 85%;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: -0.05em;
+	text-align: left;
+}
+
+h2 {
+	font-size: inherit;
+	font-weight: bold;
+}
+
+h1.product_title {
+	font-size: 70px;
+	margin: 0;
+}
+
+.product_price {
+	font-family: 'ITC Avant Garde Gothic W05 Bol', helvetica, arial, sans-serif;
+	font-weight: bold;
+	font-size: 26px;
+}
+
+.nav > li > a,
+.navbar-inverse .navbar-nav > li > a,
+input[type=submit] {
+	font-family: 'ITC Avant Garde Gothic W05 Bol', helvetica, arial, sans-serif;
+	font-size: 15px;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+
+
+/*.navbar-inverse .navbar-nav > li > a {
+	font-family: 'ITC Avant Garde Gothic W05 Bol', helvetica, arial, sans-serif;
+	font-size: 15px;
+	color: #fff;
+	text-transform: uppercase;
+	background-image: url("../img/nav-separator.png") no-repeat left center;
+	padding: 13px 15px;
+}*/
+
+.navbar-inverse .navbar-nav > li > a:hover {
+	color: #ccc;
+}
+
+.nav > li > a:hover {
+	background-color: #ccc;
+}
+
+@media screen and (max-width: 768px), screen and (max-device-width: 768px){
+
+	.product_desc {
+		clear: both;
+		float: right;
+	}
+
+
+	h1.product_title {
+		font-size: 60px
+	}
+
+
+}
+
+@media screen and (max-width: 420px), screen and (max-device-width: 420px) {
+
+	h1.product_title {
+		font-size: 50px
+	}
+
+	.product-img.main {
+		padding: 0;
+	}
+
+	.navbar-right {
+		float:left;
+	}
+
+	.login > a {
+		margin-top: 40px;
+		padding-left: 0 !important;
+	}
+
+	.search_submit,	
+	.search_field, {
+		bottom: 6px;
+	}
+
+	.search_submit{
+		right: -227px;
+	}
+
+	.search_field {
+		right: -146px;
+	}
+
+	.carousel-inner > .item > a > img {
+		width: 100%;
+		opacity: 0.8;
+	}
+
+	.carousel-caption {
+		text-align: center;
+		font-size: 24px;
+		right: 0;
+		left: 0;
+		top: 60%;
+		padding: 30px;
+	}
+
+}
+
+@media screen and (max-width: 320px), screen and (max-device-width: 320px) {
+	h1.product_title {
+		font-size: 40px
+	}
+}
+
+
