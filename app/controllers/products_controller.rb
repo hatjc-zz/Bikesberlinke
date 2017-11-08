@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    search_term = params[:q]
   end
 
   # GET /products/1
@@ -22,6 +23,14 @@ class ProductsController < ApplicationController
   end
 
   # POST /products
+  def index
+  if params[:q]
+    search_term = params[:q]
+    @products = Product.where("name LIKE ?", "%#{search_term}%")
+  else
+    @products = Product.all
+  end
+end
   # POST /products.json
   def create
     @product = Product.new(product_params)
