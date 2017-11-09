@@ -40,6 +40,13 @@
               <li><%= link_to 'Orders', orders_path %></li>
            </ul>
            <ul class="nav navbar-right">
+            <li class="login">
+              <% if user_signed_in? %>
+                <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+              <% else %>
+                <%= link_to('Login', new_user_session_path) %>
+              <% end %>
+            </li>
             <li>
               <div class="navbar-form search_bar">
                 <%= form_with(url: products_path, method: 'get', local: 'true') do |form| %>
