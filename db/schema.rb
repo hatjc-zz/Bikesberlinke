@@ -10,23 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20171111192531) do
-=======
-ActiveRecord::Schema.define(version: 20171111180746) do
->>>>>>> cc40b76a7835c3e50a67cd51f87512d44ec1fccf
+ActiveRecord::Schema.define(version: 20171111194910) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
+    t.text "body"
+    t.integer "rating"
     t.integer "product_id"
-    t.float "rating"
-    t.string "message"
-    t.datetime "created_at"
-<<<<<<< HEAD
-=======
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_comments_on_product_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
->>>>>>> cc40b76a7835c3e50a67cd51f87512d44ec1fccf
   end
 
   create_table "orders", force: :cascade do |t|
