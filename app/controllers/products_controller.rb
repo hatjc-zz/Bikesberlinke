@@ -4,16 +4,18 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-  if params[:q]
-    search_term = params[:q]
-    @products = Product.where("name LIKE ?", "%#{search_term}%")
-  else
-    @products = Product.all
+    if params[:q]
+      search_term = params[:q]
+      @products = Product.search(search_term)
+    else
+      @products = Product.all
+    end
   end
-end
+
   # GET /products/1
   # GET /products/1.json
   def show
+    @comments = @product.comments.order("created_at DESC")
   end
 
   # GET /products/new
@@ -32,7 +34,7 @@ end
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Item was successfully created.' }
+        format.html { redirect_to "/products", notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
@@ -46,7 +48,7 @@ end
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Item was successfully updated.' }
+        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else
         format.html { render :edit }
@@ -60,7 +62,7 @@ end
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to products_url, notice: 'You successfully deleted the item.' }
+      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -73,6 +75,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :image_url, :color, :price)
+      params.require(:product).permit(:name, :description, :image_url, :colour, :price)
     end
 end
