@@ -1,3 +1,58 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.prod h3 {
+  font-size: 1.7em;
+  color: #840000;
+  text-align: center;
+}
+.one-prod {
+  float : left;
+  border : 1px solid grey;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.btn-default {
+  margin: 0;
+  font-size: 0.7em;
+}
+.show {
+  border:1px solid grey;
+  margin: 20px auto;
+  padding: 25px;
+}
+.show img {
+  width: 70%;
+  margin: 10px auto;
+}
+.field input,
+.field textarea,
+.new_product input,
+.new_product textarea  {
+  resize: none;
+  width: 40%;
+}
+.name-comment {
+  text-transform: capitalize;
+}
+.rating img{
+  width: 2.5%;
+}
+.rated img {
+  width: 10%;
+}
+.rated-list img {
+  width: 2.5%;
+}
+
+
+
+
+
+
+
+
+
+
+

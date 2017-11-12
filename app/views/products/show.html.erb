@@ -1,26 +1,44 @@
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+<article class="container">
+  <div class="show"> 
+    <p id="notice"><%= notice %></p>
+    <div class="row">
+    <div class="col-sm-9 col-md-9">
+    <p>
+      <%= image_tag(@product.image_url, class: "img-responsive") %>
+    </p>
+    </div>
+    <div class="col-sm-3 col-md-3">
+    <p>
+      <strong>Name:</strong>
+      <%= @product.name %>
+    </p>
+    
+    <p>
+     <strong>Description:</strong>
+      <%= @product.description %>
+    </p>
+    
+    
+    <p>
+      <strong>Colour:</strong>
+      <%= @product.color %>
+    </p>
+    <p>
+      <strong>Price:</strong>
+      <%= @product.price %>
+    </p>
+    <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+    
+    </div>
+    </div>
+    <hr>
+    <%= render partial: "new_comment" %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+    <%= render partial: "comments" %>
+    
+    <br>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
-
-<p>
-	<strong>Color:</strong>
-	<%=@product.color %>
-</p>
-<p>
-	<strong>Color:</strong>
-	<%=@product.price %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+    <%= link_to 'Edit', edit_product_path(@product) , class: "btn btn-default" %>
+    <%= link_to 'Back', products_path, class: "btn btn-default" %>
+  </div>   
+</article>

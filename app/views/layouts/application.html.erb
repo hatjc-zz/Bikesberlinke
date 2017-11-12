@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Berlin Bikes</title>
+    <title>Bikes Berlin</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
@@ -15,73 +11,94 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
-    <div class="container">
-      <div class="header">
-          <%= link_to image_tag("logo.png", class: "brand"), root_path %>
-      
-      </div>
-      <nav class="navbar navbar-inverse">
-        <div>
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li><%= link_to 'Products', products_path %></li>
+  <body data-spy="spyscroll" data-target=".navbar-default">
+    <nav class="navbar navbar-inverse navbar-fixed-top"><!--  Nav  -->
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a href="#index" class="navbar-brand">Bike Berlin</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to 'Products', products_path %></li>
               <li><%= link_to 'About', static_pages_about_path %></li>
               <li><%= link_to 'Contact', static_pages_contact_path %></li>
               <li><%= link_to 'Orders', orders_path %></li>
-           </ul>
-           <ul class="nav navbar-right">
-            <li class="login">
-              <% if user_signed_in? %>
-                <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-              <% else %>
-                <%= link_to('Login', new_user_session_path) %>
-              <% end %>
-            </li>
-            <li>
-              <div class="navbar-form search_bar">
-                <%= form_with(url: products_path, method: 'get', local: 'true') do |form| %>
-                  <%= form.label :q, 'Search for:' %>
-                  <%= form.text_field :q, id: 'q', value: params[:q], class: 'search_field' %>
-                  <%= form.submit 'Search', class: 'search_submit' %>
+                <li>
+                <% if user_signed_in? %>
+                  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+                <% else %>
+                  <%= link_to('Login', new_user_session_path) %>
                 <% end %>
-               </div>
-            </li>
-           </ul>
+                </li>
+                <li class="user-login dropdown">
+                  <% if user_signed_in? %>
+                     
+                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                             Welcome: <%= current_user.email %><span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li>
+                            <%= link_to 'Profile', user_path(current_user.id) %>
+                        </li>
+                        <li>
+                          <%= link_to 'Settings', edit_user_registration_path %>
+                        </li>
+                      </ul>       
+                  <% end %>
+                </li>
+                <li>
+                  <form class="navbar-form" role="search">
+                        
+                           <%= form_tag("/products", method: "get", class: 'input-group') do %>
+                           <!--<%= label_tag(:q, "Search for:") %>-->
+                           <%= text_field_tag(:q ,"" , placeholder: "  Search .. ")%>
+                           <%= submit_tag("Search", class: "btn btn-default") %>
+                         <% end %>
+                       </form>
+                </li>
+              </ul>
+              
+            </div>
           </div>
-        </div>
-      </nav>
-      <% if notice %>
-        <div class="alert alert-success alert-dismissable" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <%= notice %>
-        </div>
-      <% end %>
-      <% if alert %>
-        <div class="alert alert-danger alert-dismissable" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <%= alert %>
-        </div>
-      <% end %>
+        </nav>
+        
+          
+          <div class="cover">
+          <% if notice %>  
+            <p id="notice" class="alert alert-info">
+              <%= notice %>
+            </p>
+          <% end %>
+          <% if alert %> 
+            <p id="alert" class="alert alert-info">
+              <%= alert %>
+            </p>
+          <% end %>
 
-      <%= yield %>
 
-      <footer>
-        &copy; 2017 Berlin Bikes
-      </footer>
-    </div>
+              <div class="cover-text">
+                <h2>We are the Bike Berlin </h2>
+                <p>Our bikes never miss out </p>
+              </div>
+        </div>
+        <article>
+          
+          <%= yield %>
+        </article>
+        <footer class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-sm-8 col-xs-5">
+                <p>&copy; Bike Shop 2017 </p>
+              </div>
+            </div> 
+          </div>
+        </footer> 
   </body>
 </html>
+
