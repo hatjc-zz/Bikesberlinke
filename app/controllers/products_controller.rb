@@ -10,8 +10,7 @@ class ProductsController < ApplicationController
     else
       @products = Product.all
     end
-  end
-
+    
   # GET /products/1
   # GET /products/1.json
   def show
