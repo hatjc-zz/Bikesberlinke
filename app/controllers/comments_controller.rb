@@ -17,10 +17,6 @@ class CommentsController < ApplicationController
   def destroy
   end
 
-  def index
-    @comment = @product.comments.all.paginate(page: params[:page], per_page: 5)
-  end
-
   private
 
     def comment_params
