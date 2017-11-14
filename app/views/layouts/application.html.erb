@@ -40,7 +40,7 @@
                   <% if user_signed_in? %>
                      
                      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                             last login from: <%= current_user.last_sign_in_ip %><span class="caret"></span></a>
+                             Logged in as: <%= current_user.first_name %><span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <li>
                             <%= link_to 'Profile', user_path(current_user.id) %>
