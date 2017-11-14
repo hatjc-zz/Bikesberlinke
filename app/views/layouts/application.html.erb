@@ -53,13 +53,11 @@
                 </li>
                 <li>
                   <form class="navbar-form" role="search">
-                        
-                           <%= form_tag("/products", method: "get", class: 'input-group') do %>
-                           <!--<%= label_tag(:q, "Search for:") %>-->
-                           <%= text_field_tag(:q ,"" , placeholder: "  Search .. ")%>
-                           <%= submit_tag("Search", class: "btn btn-default") %>
-                         <% end %>
-                       </form>
+                     <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+                     <%= form.text_field :q, id: 'q', value: params[:q] %>
+                     <%= form.submit 'Search' %>
+                  <% end %>
+                  </form>
                 </li>
               </ul>
               
