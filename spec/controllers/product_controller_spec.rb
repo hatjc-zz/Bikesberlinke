@@ -13,7 +13,7 @@ end
 
 describe "GET #show" do
 
-  let!(:product) {FactoryGirl.create(:product)}
+  let!(:product) {FactoryBot.create(:product)}
 
   it "Loads a single product page" do
     subject {get :show, params: {id: product}}
@@ -26,7 +26,7 @@ describe 'POST #create' do
   context 'with valid attributes' do
   it 'create a valid product'do
   expect{
-   post :create, params: {product: FactoryGirl.attributes_for(:product)}
+   post :create, params: {product: FactoryBot.attributes_for(:product)}
    }.to change(Product, :count).by(1)
   end
   end
@@ -35,7 +35,7 @@ describe 'POST #create' do
   context 'with invalid attributes' do
   it 'does not create a product' do
     expect{
-     post :create, params: {product: FactoryGirl.attributes_for(:product, name: nil)}
+     post :create, params: {product: FactoryBot.attributes_for(:product, name: nil)}
      }.not_to change(Product, :count)
   end
   end
@@ -45,8 +45,8 @@ end
 
 describe "PUT #update price" do
   before do
-    @product = FactoryGirl.create(:product)
-    @user = FactoryGirl.build(:admin)
+    @product = FactoryBot.create(:product)
+    @user = FactoryBot.build(:admin)
     sign_in @user
   end
 
@@ -61,8 +61,8 @@ end
 describe "DELETE #destroy" do
 
   before do
-    @product = FactoryGirl.create(:product)
-    @user = FactoryGirl.build(:admin)
+    @product = FactoryBot.create(:product)
+    @user = FactoryBot.build(:admin)
     sign_in @user
   end
 

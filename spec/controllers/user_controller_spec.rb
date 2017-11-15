@@ -3,8 +3,8 @@ require "rails_helper"
 describe UsersController, type: :controller do
 
   before do
-  @user = FactoryGirl.create(:user)
-  @user2 = FactoryGirl.create(:user)
+  @user = FactoryBot.create(:user)
+  @user2 = FactoryBot.create(:user)
   #let(:user) { User.create!(first_name: "Sample", last_name: "Joe", email:"test3@test.com", password:"123456") }
   #let(:user2) { User.create!(first_name: "John", last_name: "Doe", email:"test4@test.com", password:"abcdef") }
   end
@@ -45,7 +45,7 @@ describe UsersController, type: :controller do
     context "with valid attributes" do
       it "creates a new user" do
         expect{
-          post :create, params: { user: FactoryGirl.attributes_for(:user) }
+          post :create, params: { user: FactoryBot.attributes_for(:user) }
         }.to change(User,:count).by(1)
       end
     end
@@ -53,7 +53,7 @@ describe UsersController, type: :controller do
     context "with invalid attributes" do
         it "does not create a new user" do
           expect{
-            post :create, params: { user: FactoryGirl.attributes_for(:user, password: "1234") }
+            post :create, params: { user: FactoryBot.attributes_for(:user, password: "1234") }
           }.to raise_error(/Password is too short/)
         end
       end
