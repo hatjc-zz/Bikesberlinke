@@ -6,7 +6,7 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 require 'devise'
-
+require 'support/factory_bot'
 RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, :type => :controller
 end

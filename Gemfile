@@ -20,7 +20,6 @@ gem 'devise'
 gem 'cancancan', '~> 1.10'
 gem 'will_paginate', '~> 3.0'
 gem 'rails-controller-testing'
-gem "factory_bot_rails", "~> 4.0"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -34,6 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.6'
+  gem "factory_bot_rails", "~> 4.0"
 end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
