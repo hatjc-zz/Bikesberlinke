@@ -5,6 +5,16 @@ class Product < ActiveRecord::Base
 	validates :name, :price, :image_url, :colour, presence: true
 	validates :price, numericality: true
 
+
+	def self.search(search_term)
+    if Rails.env.development?
+      Product.where("name LIKE ?", "%#{search_term}%")
+    else
+      Product.where("name ilike ?", "%#{search_term}%")
+    end
+  end
+
+
 	def highest_rating_comment
 		comments.rating_desc.first
 	end
@@ -21,11 +31,4 @@ class Product < ActiveRecord::Base
         comments.average(:rating).to_f
     end
     
-    def self.search(search_term)
-    if Rails.env.production?
-      Product.where("name ilike ?", "%#{search_term}%")
-    else
-      Product.where("name LIKE ?", "%#{search_term}%")
-    end  
-  end
 end
