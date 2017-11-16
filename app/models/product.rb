@@ -2,7 +2,7 @@ class Product < ActiveRecord::Base
 	has_many :orders
 	has_many :comments
 
-	validates :name, :price, :image_url, :color, presence: true
+	validates :name, :price, :image_url, :colour, presence: true
 	validates :price, numericality: true
 
 	def highest_rating_comment
