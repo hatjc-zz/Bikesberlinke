@@ -52,12 +52,10 @@
                   <% end %>
                 </li>
                 <li>
-                  <form class="navbar-form" role="search">
                     <%= form_tag("/products", method: "get") do %>
                     <%= text_field_tag(:q,nil,:placeholder => "search...", :class=>"form-control") %>
                     <!--<%= submit_tag("Go", :class =>"btn btn-outline-warning") %>-->
                   <% end %>
-                  </form>
                 </li>
               </ul>
               
