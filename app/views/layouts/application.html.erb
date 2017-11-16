@@ -52,8 +52,8 @@
                   <% end %>
                 </li>
                 <li>
-                    <%= form_tag("/products", method: "get") do %>
-                    <%= text_field_tag(:q,nil,:placeholder => "search...", :class=>"form-control") %>
+                    <%= form_tag("/products", method: "get", class: "SearchFormSidenav" ) do  %>
+                    <%= text_field_tag(:q,nil,:placeholder => "search products", :class=>"form-control") %>
                     <!--<%= submit_tag("Go", :class =>"btn btn-outline-warning") %>-->
                   <% end %>
                 </li>
