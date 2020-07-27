@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bikes Berlin</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body data-spy="spyscroll" data-target=".navbar-default">
+    <nav class="navbar navbar-inverse navbar-fixed-top"><!--  Nav  -->
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a href="#index" class="navbar-brand">Bike Berlin</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to 'Products', products_path %></li>
+              <li><%= link_to 'About', static_pages_about_path %></li>
+              <li><%= link_to 'Contact', static_pages_contact_path %></li>
+              <li><%= link_to 'Orders', orders_path %></li>
+                <li>
+                <% if user_signed_in? %>
+                  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+                <% else %>
+                  <%= link_to('Login', new_user_session_path) %>
+                <% end %>
+                </li>
+                <li class="user-login dropdown">
+                  <% if user_signed_in? %>
+                     
+                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                             Logged in as: <%= current_user.first_name %><span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li>
+                            <%= link_to 'Profile', user_path(current_user.id) %>
+                        </li>
+                        <li>
+                          <%= link_to 'Settings', edit_user_registration_path %>
+                        </li>
+                      </ul>       
+                  <% end %>
+                </li>
+                <li>
+                    <%= form_tag("/products", method: "get", class: "SearchFormSidenav" ) do  %>
+                    <%= text_field_tag(:q,nil,:placeholder => "search products", :class=>"form-control") %>
+                    <!--<%= submit_tag("Go", :class =>"btn btn-outline-warning") %>-->
+                  <% end %>
+                </li>
+              </ul>
+              
+            </div>
+          </div>
+        </nav>
+        
+          
+          <div class="cover">
+          <% if notice %>  
+            <p id="notice" class="alert alert-info">
+              <%= notice %>
+            </p>
+          <% end %>
+          <% if alert %> 
+            <p id="alert" class="alert alert-info">
+              <%= alert %>
+            </p>
+          <% end %>
+
+
+              <div class="cover-text">
+                <h2>We are the Bike Berlin </h2>
+                <p>Our bikes never miss out </p>
+              </div>
+        </div>
+        <article>
+          
+          <%= yield %>
+        </article>
+        <footer class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-sm-8 col-xs-5">
+                <p>&copy; Bike Berlin 2017 </p>
+              </div>
+            </div> 
+          </div>
+        </footer> 
+  </body>
+</html>
+

@@ -1,0 +1,325 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  margin: 0;
+  padding: 0;
+} 
+html, body {
+  height: 100%;
+}
+h1 {
+  color : #fff;
+  text-shadow:2px 2px 2px #000 ;
+  text-align : center;
+  font-family : "Arial Black", Gadget, sans-serif;
+  font-size: 2.3em;
+  margin: 70px 0 0 0;
+}
+.navbar-inverse {
+    background-color: #1d8bc7;
+    border-color: #1d8bc7;
+}
+.footer {
+  background-color: #1d8bc7;
+  color : #fff;
+  position: relative;
+  line-height:60px; 
+  height: 80px;
+  clear: both;
+}
+.footer p {
+  margin-top: 10px;
+}
+.about {
+  padding: 20px;
+}
+.about h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.glyphicon {
+  margin-right: 10px;
+  display: inline-block;
+  font-size: 1.5em;
+  color: #1d8bc7;
+}
+.contact {
+  margin: 20px;
+  padding:20px;
+}
+ .navbar ul {
+  float:right;
+}
+.navbar ul li a:active {
+  color: green;
+}
+.navbar a:hover {
+  color: red;
+}
+.btn {
+  margin-bottom: 30px;
+}
+//////   modal search ///////
+#modalSearch {
+  padding: 30px;
+  border: 0;
+}
+#modalSearch a {
+  text-decoration: none;
+}
+:focus {outline:0 !important;} ///// blue border removed //////
+.glyphicon-search  {
+  color: #fff;
+  margin: 0;
+  font-size: 1em;
+}
+///////  modal login ///////
+.modal-content {
+  background: #d8d8d8;
+  padding: 20px;
+  
+}
+.modal-content input {
+  margin: 10px auto;
+  width: 100%;
+}
+.login {
+  margin-bottom: 0;
+  color: #bababa;
+  margin-top: 2%;
+}
+.login:hover {
+  color: #fff;
+}
+.navbar-form {
+  line-height: 24px;
+}
+.navbar-form input {
+  margin-bottom: 0px;
+  margin-top: 3px;
+}
+
+.cover-text {
+  text-align: center;
+  color: #1d8bc7;
+  display: table;
+  margin: 0 auto;
+  font-size: 26px;
+  text-shadow:2px 2px 2px #000 ;
+}
+.cover-text h2 {
+  font-size: 2em;
+  margin-top: 30%;
+  text-align: center;
+}
+.banner {
+  background-color: #1d8bc7;
+  height: 80px;
+}
+.banner h2 {
+  text-align: center;
+  color:  #fff;
+}
+.product {
+  margin-top: 25px;
+}
+.product img {
+  margin: 25px auto;
+  border : 3px solid #919191;
+}
+.product p {
+  text-align: center;
+  font-size: 1.3em;
+  color: #5e5e5e; 
+}
+.category {
+  margin-bottom: 25px;
+}
+.category h4 {
+  background-color : #AAAEB1;
+  height: 40px;
+  width: 100%;
+  margin-bottom: -1px;
+  margin-top: 25px; 
+  line-height: 40px;
+  text-align: center;
+}
+.carousel-caption {
+  margin-bottom: 40%;
+  position: absolute;
+  color: black;
+  font-size: 1.4em;
+}
+.carousel-inner img {
+  margin-bottom: 150px;
+  margin: 0 auto;
+  width: 50%;
+}
+.carousel-indicators li {
+    display: inline-block;
+    margin: 10px;
+    text-indent: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    border:1px solid #6b6b6b;
+}
+.carousel-indicators .active {
+    margin: 10px;
+    background-color: #fcb53a;
+}
+.carousel-control:hover {
+  background: none;
+}
+.thank_you {
+  color: #1d8bc7;
+  margin-top: 20px;
+  min-height: 350px;
+}
+.user-style {
+  padding:40px;
+  width: 500px;
+}
+.user-style i {
+ color: #3097ff;
+}
+.user-style .field input{
+  width: 100%;
+}
+.user-login {
+  color: #71d2d6;
+  margin-top: 0px;
+}
+.alert-info{
+  color: #000;
+  margin-top: 60px;
+}
+
+
+
+
+@media (min-width: 550px) and (max-width: 770px) {
+  .navbar-inverse  {
+    background: transparent;
+    border: none;
+  }
+  .navbar-collapse {
+    background: transparent;
+    background-image: none;
+  }
+  .navbar-collapse ul li {
+    border-bottom: 1px solid rgba(204,204,204,0.5);
+    background: #1d8bc7;
+  }
+  .navbar-collapse ul {
+    margin-top: -1px;
+  }
+  .navbar-header {
+    background: #1d8bc7;
+  }
+  .navbar-toggle {
+    background-color: #1d8bc7;
+  }
+  .carousel-caption {
+    margin-bottom: 36%;
+    position: absolute;
+  }
+  .login {
+    border-radius : 0;
+    margin-top: 0px;
+    text-align: left;
+  }
+  .rated img {
+    width: 4%;
+  }
+  .rating img{
+    width: 4%;
+  }
+}
+@media (max-width: 550px) {
+  .cover-text h2 {
+    font-size: 1.3em;
+    margin: 60% auto;
+  }
+  .cover-text p {
+    margin-top: -150px;
+  }
+  .cover{
+    margin-top: -20px;
+    padding:0;
+  }
+  .navbar-inverse  {
+    background: transparent;
+    border: none;
+  }
+  .navbar-collapse {
+    background: transparent;
+    background-image: none;
+  }
+  .navbar-collapse ul {
+    margin-top: -1px;
+  }
+  .navbar-collapse ul li {
+    border-bottom: 1px solid rgba(204,204,204,0.5);
+    background: #1d8bc7;
+  }
+  .navbar-header {
+    background: #1d8bc7;
+  }
+  .navbar-toggle {
+    background-color: #1d8bc7;
+  }
+  .carousel-caption {
+    margin-bottom: 33%;
+    position: absolute;
+  }
+  .navbar-form {
+    line-height: 24px;
+    display: inline-block;
+  }
+  .navbar-form input {
+    margin-bottom: 0px;
+    margin-top: 3px;
+  }
+  .navbar-form {
+    margin-left: 12%;
+  }
+  .login {
+    border-radius : 0;
+    margin-top: 0px;
+    text-align: left;
+  }
+  .user-login {
+    height: 40px;
+    line-height: 40px;
+    margin-top: 0;
+    padding: 0 5px;
+  }
+  table {
+    width: 100%!important;
+  }
+  .rated img {
+    width: 4%;
+  }
+  .rating img{
+    width: 4%;
+  }
+}
+
+.SearchFormSidenav {
+  position: relative;
+    top: 8px;
+    left: -7px;
+}
+
+
+
+
+
+
+
+
+
+
